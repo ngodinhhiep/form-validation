@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>登録</h1>
+        <!-- Form -->
+        <form id="form" novalidate>
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="name">名前</label>
+                <input id="name" type="text" placeholder="田中" name="name" 
+                        required minlength="3" maxlength="30">
+            </div>
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label for="phone">携帯電話</label>
+                <input id="phone" type="tel" placeholder="080-3755-3598"  
+                        required pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" name="phone">
+            </div>
+            <!-- Email Address -->
+            <div class="form-group">
+                <label for="email">メールアドレス</label>
+                <input id="email" type="email" placeholder="msg.2101016@gmail.com"
+                        required name="email">
+            </div>
+            
+            <!-- Website URL-->
+            <div class="form-group">
+                <label for="website">ウェブサイトのURL</label>
+                <input type="url" id="website" placeholder="https://google.com"
+                        required name="website">
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password1">パスワード</label>
+                <input type="password" id="password1" placeholder="パスワード　(最低8桁)"
+                        required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                        title="最低一つの大文字、一つの小文字、一つの数字を入力してください。">
+            </div>
+            <!-- Show password -->
+            <div class="show">
+                <input type="checkbox" id="show-password">パスワードを表示する
+            </div>
+            
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <label for="password2">パスワードを確認する</label>
+                <input type="password" id="password2" placeholder="パスワードを確認してください。"
+                        required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" name="password">
+            </div>
+            <button type="submit">登録</button>
+            <!-- Error/Success Message -->
+        </form>
+        <div class="message-container">
+            <h3 id="message">早めに！</h3>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
